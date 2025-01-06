@@ -16,14 +16,22 @@ class PDFChatEngine:
         self.overlap = 50
         self.chunks = []
         self.faiss_index = None
+        self.pdf_path = None
         
     def process_pdf(self, pdf_file) -> str:
         """Process PDF file and create searchable index"""
+        # Save the PDF file
+        import tempfile
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
+            tmp_file.write(pdf_file.getvalue())
+            self.pdf_path = tmp_file.name  # Store the path
+            
         text = self._extract_text(pdf_file)
         chunks = self._chunk_text(text)
         embeddings = self._create_embeddings(chunks)
         self._build_index(embeddings)
         return text
+    
     def _extract_text(self, pdf_file) -> str:
         """Extract text from PDF file"""
         pdf_reader = PyPDF2.PdfReader(pdf_file)
