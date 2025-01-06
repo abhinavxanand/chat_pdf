@@ -1,6 +1,6 @@
 # PDF Chat Assistant
 
-A Streamlit-based web application that allows users to chat with their PDF documents using Azure OpenAI's GPT models and RAG (Retrieval-Augmented Generation).
+A Streamlit-based web application that allows users to chat with their PDF documents using Azure OpenAI's GPT models and RAG (Retrieval-Augmented Generation). (View screenshots.md for demo)
 
 ## Features
 
