@@ -55,7 +55,3 @@ The application uses a RAG (Retrieval-Augmented Generation) approach:
 3. FAISS is used for efficient similarity search
 4. Relevant context is retrieved and sent to Azure OpenAI
 5. GPT model generates context-aware responses
-
-## License
-
-MIT License 
